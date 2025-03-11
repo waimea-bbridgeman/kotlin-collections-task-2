@@ -176,11 +176,15 @@ fun listAllMonkeys(cageList: List<String>) {
  * - Etc.
  */
 fun listEmptyCages(cageList: List<String>) {
-    if (cageList.isEmpty()) {
-        println()
+    println("EMPTY CAGES")
+    for ((i, cage) in cageList.withIndex()) {
+        // If cage empty, go to next
+        if (cage != EMPTY) continue
+        // Otherwise show the name
+        println("Cage $i $cage")
     }
 
-    println("EMPTY CAGES")
+
 }
 
 
@@ -208,9 +212,15 @@ fun listAllMonkeysAndCages(cageList: List<String>) {
 /**
  * Returns the number of monkeys found in the given cage list
  */
-fun monkeyCount(cageList: List<String>): Int {
-
-    return 0    // REPLACE THIS WITH YOUR CODE!
+fun monkeyCount(cageList: List<String>) : Int {
+    var count = 0
+    for (monkey in cageList) {
+        // If cage empty, go to next
+        if (monkey == EMPTY) continue
+        // Otherwise keep count
+       count++
+    }
+    return count
 }
 
 
@@ -219,7 +229,14 @@ fun monkeyCount(cageList: List<String>): Int {
  */
 fun emptyCount(cageList: List<String>): Int {
 
-    return 0    // REPLACE THIS WITH YOUR CODE!
+    var count = 0
+    for (monkey in cageList) {
+        // If cage empty, go to next
+        if (monkey != EMPTY) continue
+        // Otherwise keep count
+        count++
+    }
+    return count
 }
 
 
@@ -236,19 +253,25 @@ fun emptyCount(cageList: List<String>): Int {
  */
 fun showMonkeyCages(cageList: List<String>) {
 
-    println("+---------".repeat(cageList.size) + "+")
+   val banner = ("+--------".repeat(cageList.size) + "+")
+
+
+    println(banner)
 
     for (i in 0..<cageList.size) {
-        println("${cageList[i]} | (Cage) ${i + 1}")
+        print("| Cage ${i + 1} ")
     }
+    println("|")
 
-    println("+---------".repeat(cageList.size) + "+")
+    println(banner)
 
     for (i in 0..<cageList.size) {
-        println("${cageList[i]} | (Cage) ${i + 1}")
+        print("| ${cageList[i]} ")
     }
 
-    println("+---------".repeat(cageList.size) + "+")
+    println("|")
+    
+   println(banner)
 
 }
 
