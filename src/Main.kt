@@ -259,18 +259,18 @@ fun showMonkeyCages(cageList: List<String>) {
     println(banner)
 
     for (i in 0..<cageList.size) {
-        print("| Cage ${i + 1} ")
+        print("| Cage ${i + 1} " .padEnd(9))
     }
     println("|")
 
     println(banner)
 
     for (i in 0..<cageList.size) {
-        print("| ${cageList[i]} ")
+        print("| ${cageList[i]}" .padEnd(9))
     }
 
     println("|")
-    
+
    println(banner)
 
 }
@@ -282,6 +282,7 @@ fun showMonkeyCages(cageList: List<String>) {
 fun clearCage(cageList: MutableList<String>, cageNum: Int) {
     println("--- Clearing cage $cageNum")
 
+    cageList.removeAt(4)
 
 }
 
