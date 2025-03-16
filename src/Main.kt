@@ -296,7 +296,10 @@ fun clearCage(cageList: MutableList<String>, cageNum: Int) {
 fun swapCages(cageList: MutableList<String>, cageNum1: Int, cageNum2: Int) {
     println("<-> Swapping cages $cageNum1 and $cageNum2")
 
-    check(false)    // REPLACE THIS WITH YOUR CODE!
+    var temp = cageList[cageNum1]
+    cageList[cageNum2] = cageList[cageNum1]
+    cageList[cageNum2] = temp
+
 }
 
 
